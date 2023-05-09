@@ -1,0 +1,73 @@
+@use "../../styles/partials/breakpoints" as *;
+@use "../../styles/partials/colours" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/typography" as *;
+
+.search {
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem 1rem;
+  border-radius: 0.125rem 0.125rem 0 0;
+  background-color: $white;
+  border-bottom: 1px solid $cloud;
+  @include tablet {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 1rem 2rem 0rem 2rem;
+    border-bottom: none;
+  }
+  @include desktop {
+    padding: 1rem 2rem 0.5rem 2rem;
+    background-color: white;
+  }
+  &__title {
+    margin-bottom: 1rem;
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  @include tablet {
+    flex-direction: row;
+    width: 50%;
+    justify-content: flex-end;
+  }
+  &__input {
+    margin-bottom: 1rem;
+    border-radius: 1rem;
+    border: 1px solid $cloud;
+    padding: 0.25rem 1rem;
+    background-image: url("../../assets/Icons/search-24px.svg");
+    background-repeat: no-repeat;
+    background-position-y: center;
+    background-position-x: 90%;
+  }
+  &__button {
+    margin-bottom: 1rem;
+    border-radius: 1rem;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &:hover {
+      background-color: $header-colour;
+    }
+    @include tablet {
+      min-width: 8rem;
+      padding: 0rem 1rem;
+      white-space: nowrap;
+    }
+    @include desktop {
+      padding: 0rem 4rem;
+
+      width: 30%;
+    }
+
+    background-color: $button-colour;
+    color: $white;
+    @include tablet {
+      margin-left: 1.5rem;
+    }
+  }
+}

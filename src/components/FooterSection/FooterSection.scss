@@ -1,0 +1,12 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/colours" as *;
+
+.footer {
+  @include flex(center, center, row);
+  color: $slate;
+  font-size: 11px;
+  width: 100%;
+  background-color: $light-grey;
+  padding-bottom: 2rem;
+}

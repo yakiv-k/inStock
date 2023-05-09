@@ -1,0 +1,257 @@
+@use "../../../styles/partials/colours" as *;
+@use "../../../styles/partials/mixins" as *;
+
+.new-item {
+  background-color: $light-grey;
+  padding: 1rem 1rem 0 1rem;
+  height: 90vh;
+  @include tablet {
+    padding: 2rem 2rem 0 2rem;
+  }
+
+  @include desktop {
+    padding: 1rem 8rem 0 8rem;
+  }
+
+  &__container {
+    background-color: $white;
+    box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.1);
+    border-radius: 3px;
+    transform: translateY(-4.5rem);
+
+    @include tablet {
+      transform: translateY(-6.5rem);
+    }
+  }
+
+  &__header {
+    display: flex;
+    border-bottom: 1px solid $cloud;
+    align-items: center;
+    padding: 1rem;
+    @include tablet {
+      padding: 1.5rem 1rem 1rem 1rem;
+    }
+    @include desktop {
+      padding: 2rem 2rem 1.5rem 2rem;
+    }
+  }
+
+  &__title {
+    margin-left: 0.5rem;
+    font-size: 1.5rem;
+    margin-top: 1rem;
+    font-weight: 700;
+    @include tablet {
+      font-size: 2rem;
+      margin-top: 0;
+    }
+  }
+
+  &__link {
+    padding-top: 0.3rem;
+  }
+
+  &__back-icon {
+    height: 1.25rem;
+  }
+}
+
+.new-item-form {
+  &__title {
+    font-size: 1rem;
+    padding-bottom: 1rem;
+    font-weight: 700;
+    @include tablet {
+      padding-bottom: 2rem;
+      font-size: 1.5rem;
+      font-weight: 600;
+    }
+  }
+
+  &__container {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+
+    @include tablet {
+      padding: 0 2rem;
+      width: 100%;
+    }
+  }
+
+  &__wrapper {
+    @include tablet {
+      display: flex;
+      padding: 2rem 0.25rem;
+    }
+  }
+  &__radio {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin-bottom: 1rem;
+  }
+  &__radio-text {
+    font-size: 12px;
+    margin: 0;
+
+    @include tablet {
+      font-size: 0.75rem;
+      margin: 0;
+    }
+  }
+  &__radio-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 50%;
+    @include desktop {
+      width: 25%;
+    }
+  }
+  &__radio-button {
+    margin-right: 0.5rem;
+    @include tablet {
+      margin-right: 1rem;
+    }
+  }
+  &__input {
+    width: 100%;
+    outline: none;
+    padding: 1rem;
+    border: 1px solid $cloud;
+    margin: 4px 0;
+    margin-bottom: 0.5rem;
+    height: 2rem;
+    border-radius: 20px;
+    @include tablet {
+      height: 2.2rem;
+    }
+    &--select {
+      padding: 0;
+    }
+    &--padding {
+      padding: 1rem 1rem 4rem 1rem;
+      @include tablet {
+        padding: 1rem 1rem 4rem 1rem;
+      }
+      @include desktop {
+        padding: 1rem 1rem 6rem 1rem;
+      }
+    }
+    &--width {
+      @include desktop {
+        width: 25%;
+      }
+    }
+    @include tablet {
+      margin-bottom: 1rem;
+    }
+
+    &:focus {
+      border: 1px $button-colour solid;
+    }
+  }
+
+  &__right {
+    border-top: 1px solid $cloud;
+
+    @include tablet {
+      border: none;
+      border-left: 1px solid $cloud;
+      width: 50%;
+    }
+  }
+
+  &__left {
+    @include tablet {
+      width: 50%;
+    }
+  }
+}
+
+.buttons {
+  background-color: $light-grey;
+  height: 4rem;
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  width: 100%;
+
+  @include tablet {
+    @include flex(center, flex-end, row);
+  }
+
+  &__container {
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+
+    @include tablet {
+      width: 35%;
+      padding-right: 1rem;
+    }
+
+    @include desktop {
+      width: 25%;
+    }
+  }
+}
+
+.button {
+  width: 50%;
+  height: 2rem;
+  border-radius: 20px;
+  border: 1px solid $cloud;
+  background-color: $white;
+  color: $graphite;
+  &--cancel{
+text-decoration: none;
+  }
+  &--special {
+    color: $white;
+    background-color: $button-colour;
+    margin-left: 1rem;
+
+    @include tablet {
+      width: 100%;
+    }
+  }
+}
+
+.error {
+  display: flex;
+  align-items: center;
+  height: 1.25rem;
+  margin-bottom: 0.2rem;
+
+  &__icon {
+    width: 0.9rem;
+    height: 0.9rem;
+    margin-right: 0.2rem;
+  }
+
+  &__text {
+    color: $delete-icon-colour;
+    font-size: 11px;
+  }
+}
+
+.error {
+  display: flex;
+  align-items: center;
+  height: 1.25rem;
+  margin-bottom: 0.2rem;
+
+  &__icon {
+    width: 0.9rem;
+    height: 0.9rem;
+    margin-right: 0.2rem;
+  }
+
+  &__text {
+    color: $delete-icon-colour;
+    font-size: 11px;
+  }
+}

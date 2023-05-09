@@ -1,0 +1,17 @@
+@use "./partials/typography" as *;
+@use "./partials/fonts" as *;
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: $font-stack;
+  scroll-behavior: smooth;
+}
+
+a,
+a:hover,
+a:focus,
+a:active {
+  text-decoration: none;
+}

@@ -1,0 +1,347 @@
+@use "../../../styles/partials/colours" as *;
+@use "../../../styles/partials/mixins" as *;
+
+.warehouse-details {
+  padding: 1rem;
+  background-color: $light-grey;
+
+  @include tablet {
+    padding: 2rem;
+  }
+
+  @include desktop {
+    padding: 0rem 8rem;
+  }
+
+  &__container {
+    box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.1);
+    border-radius: 3px;
+    background-color: $white;
+    transform: translateY(-4.5rem);
+
+    @include tablet {
+      transform: translateY(-7rem);
+    }
+
+    @include desktop {
+      transform: translateY(-5rem);
+    }
+  }
+
+  &__header {
+    padding: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid $cloud;
+  }
+
+  &__wrapper {
+    width: 100%;
+    display: flex;
+  }
+
+  &__title {
+    margin-left: 0.5rem;
+  }
+
+  &__link {
+    padding-top: 0.3rem;
+  }
+
+  &__back-icon {
+    height: 1.25rem;
+  }
+
+  &__edit-link {
+    background-color: $instock-indigo;
+    border-radius: 20px;
+
+    @include tablet {
+      display: flex;
+      width: 5.2rem;
+    }
+  }
+
+  &__edit {
+    padding-top: 0.35rem;
+    height: 1.7rem;
+    width: 2rem;
+
+    @include tablet {
+      height: 1.5rem;
+      padding: 0.3rem 0 0 0.3rem;
+    }
+  }
+
+  &__text {
+    display: none;
+    color: $white;
+
+    @include tablet {
+      display: inline;
+      padding: 0.3rem 0 0 0.3rem;
+    }
+  }
+}
+
+.warehouse-info {
+  padding: 1rem;
+  border-bottom: 1px solid $cloud;
+
+  @include tablet {
+    padding: 2rem;
+    display: flex;
+    justify-content: space-between;
+    border: none;
+  }
+
+  &__title {
+    color: $slate;
+  }
+
+  &__content {
+    color: $instock-black;
+  }
+
+  &__container {
+    margin-bottom: 2rem;
+  }
+
+  &__wrapper {
+    display: flex;
+
+    @include tablet {
+      width: 60%;
+    }
+  }
+
+  &__left {
+    width: 50%;
+
+    @include tablet {
+      border-left: 1px solid $cloud;
+      padding-left: 2rem;
+    }
+  }
+
+  &__right {
+    width: 50%;
+  }
+}
+
+.sorter {
+  display: none;
+  color: $slate;
+  font-weight: 600;
+  @include tablet {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    background-color: $light-grey;
+    padding: 0.5rem 1rem;
+  }
+
+  &__item {
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    line-height: 1.125rem;
+    align-items: center;
+    display: flex;
+    &--address {
+      padding-right: 1rem;
+      width: 12rem;
+      @include desktop {
+        width: 12rem;
+      }
+
+      &--contact-name {
+        width: 8rem;
+      }
+
+      &--contact {
+        width: 8rem;
+      }
+      &--warehouse {
+        width: 8rem;
+      }
+    }
+  }
+  &__button {
+    background-color: transparent;
+
+    border: none;
+    line-height: 100%;
+    cursor: pointer;
+    &::before {
+      content: url("../../../assets/Icons/sort-24px.svg");
+    }
+  }
+}
+
+.inventory-card {
+  border-bottom: 1px solid $cloud;
+  padding: 1rem;
+  &:hover {
+    background-color: $list-container;
+  }
+
+  @include tablet {
+    display: none;
+  }
+  &--tablet {
+    display: none;
+    @extend .inventory-card;
+    @include tablet {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+    }
+  }
+
+  &__content-list {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  &__list-title {
+    text-transform: uppercase;
+    color: $header-colour;
+  }
+
+  &__list-details {
+    padding: 0.5rem 0 0.5rem 0;
+  }
+
+  &__sub-list {
+    padding-right: 1rem;
+    width: 50%;
+  }
+
+  &__link {
+    color: $button-colour;
+    font-weight: 600;
+    cursor: pointer;
+    &:hover {
+      text-decoration: underline;
+      text-decoration-color: $button-colour;
+    }
+
+    &--tablet {
+      @extend .inventory-card__link;
+
+      @include tablet {
+        width: 6rem;
+        display: flex;
+        align-items: center;
+      }
+    }
+  }
+
+  &__link-item {
+    display: flex;
+  }
+
+  &__info {
+    @include tablet {
+      width: 6rem;
+    }
+    &--contact {
+      width: 10rem;
+    }
+
+    &--name {
+      width: 8rem;
+    }
+  }
+
+  &__buttons {
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+
+    &--tablet {
+      justify-content: unset;
+      width: 6rem;
+      gap: 1rem;
+    }
+  }
+
+  &__button--delete {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    &::before {
+      content: url("../../../assets/Icons/delete_outline-24px.svg");
+    }
+  }
+
+  &__button--edit {
+    &::before {
+      content: url("../../../assets/Icons/edit-24px.svg");
+    }
+  }
+}
+
+.inventory-card__address--tablet {
+  width: 7rem;
+  justify-content: flex-start;
+}
+
+.in-stock {
+  color: $in-stock-colour;
+  background-color: rgba(21, 132, 99, 0.07);
+  border-radius: 20px;
+  padding: 0.25rem 0.5rem;
+  width: 60%;
+  text-align: center;
+
+  @include tablet {
+    width: 62%;
+  }
+
+  @include desktop {
+    width: 55%;
+  }
+
+  &--big {
+    width: 50%;
+
+    @include tablet {
+      width: 60%;
+    }
+
+    @include desktop {
+      width: 40%;
+    }
+  }
+}
+
+.out-of-stock {
+  color: $error-outline-colour;
+  background-color: rgba(201, 69, 21, 0.07);
+  border-radius: 20px;
+  padding: 0.25rem 0.5rem;
+  width: 85%;
+  text-align: center;
+
+  @include tablet {
+    width: 90%;
+  }
+
+  @include desktop {
+    width: 65%;
+  }
+
+  &--big {
+    width: 70%;
+
+    @include tablet {
+      width: 90%;
+    }
+
+    @include desktop {
+      width: 57%;
+    }
+  }
+}

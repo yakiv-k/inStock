@@ -1,0 +1,168 @@
+@use "../../../styles/partials/typography" as *;
+@use "../../../styles/partials/colours" as *;
+@use "../../../styles/partials/mixins" as *;
+
+li {
+  list-style: none;
+}
+
+.sorter {
+  display: none;
+  @include tablet {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    background-color: $light-grey;
+    padding: 0.5rem 1rem;
+  }
+
+  &__item {
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    line-height: 1.125rem;
+    width: 8rem;
+    align-items: center;
+    display: flex;
+    &--address {
+      width: 7rem;
+    }
+
+    &--contact-name {
+      width: 8rem;
+    }
+
+    &--contact {
+      width: 10rem;
+    }
+  }
+
+  &__button {
+    background-color: transparent;
+
+    border: none;
+    line-height: 100%;
+    cursor: pointer;
+    &::before {
+      content: url("../../../assets/Icons/sort-24px.svg");
+    }
+  }
+}
+
+.warehouseCard {
+  border-bottom: 1px solid $cloud;
+  padding: 1rem;
+  &:hover {
+    background-color: $list-container;
+  }
+
+  @include tablet {
+    display: none;
+  }
+
+  &__address--tablet {
+    @include tablet {
+      padding-right: 1rem;
+      width: 12rem;
+    }
+    @include desktop {
+      width: 12rem;
+    }
+  }
+  &--tablet {
+    display: none;
+    @extend .warehouseCard;
+    @include tablet {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+    }
+  }
+
+  &__content-list {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  &__list-title {
+    text-transform: uppercase;
+    color: $header-colour;
+  }
+
+  &__list-details {
+    padding: 0.5rem 0 0.5rem 0;
+  }
+
+  &__sub-list {
+    padding-right: 1rem;
+  }
+
+  &__link {
+    color: $button-colour;
+    font-weight: 600;
+    cursor: pointer;
+    &:hover {
+      text-decoration: underline;
+      text-decoration-color: $button-colour;
+    }
+
+    &--tablet {
+      @extend .warehouseCard__link;
+
+      @include tablet {
+        width: 8rem;
+        display: flex;
+        align-items: center;
+      }
+    }
+  }
+
+  &__link-item {
+    display: flex;
+  }
+
+  &__info {
+    @include tablet {
+      width: 6rem;
+    }
+    &--contact {
+      width: 10rem;
+    }
+
+    &--name {
+      width: 8rem;
+    }
+  }
+
+  &__buttons {
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+
+    &--tablet {
+      justify-content: unset;
+      width: 8rem;
+      gap: 1rem;
+    }
+  }
+
+  &__button--delete {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    &::before {
+      content: url("../../../assets/Icons/delete_outline-24px.svg");
+    }
+  }
+
+  &__button--edit {
+    &::before {
+      content: url("../../../assets/Icons/edit-24px.svg");
+    }
+  }
+}
+
+.warehouseCard__address--tablet {
+  width: 12rem;
+  justify-content: flex-start;
+}

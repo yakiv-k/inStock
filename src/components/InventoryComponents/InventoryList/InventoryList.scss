@@ -1,0 +1,333 @@
+@use "../../../styles/partials/typography" as *;
+@use "../../../styles/partials/colours" as *;
+@use "../../../styles/partials/mixins" as *;
+@use "../../../styles/partials/breakpoints" as *;
+
+li {
+  list-style: none;
+}
+
+.InventoryCard {
+  border-bottom: 1px solid $cloud;
+  padding: 1rem;
+  &:hover {
+    background-color: $list-container;
+  }
+  @include tablet {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 1rem 1rem;
+    background-color: $white;
+  }
+  @include desktop {
+    background-color: white;
+  }
+  &__content-list {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    gap: 4rem;
+    margin-bottom: 1rem;
+    width: 100%;
+    @include tablet {
+      margin-bottom: 0;
+      align-items: center;
+      width: 85%;
+      justify-content: flex-start;
+    }
+  }
+
+  &__list-title {
+    text-transform: uppercase;
+    color: $header-colour;
+    @include tablet {
+      display: none;
+    }
+  }
+
+  &__list-details {
+    padding: 0.5rem 0 0.5rem 0;
+    &--margin1 {
+      @include tablet {
+        width: 65%;
+      }
+    }
+    &--margin2 {
+      @include tablet {
+        width: 25%;
+      }
+    }
+    &--margin3 {
+      @include tablet {
+        width: 60%;
+      }
+    }
+    &--margin4 {
+      @include tablet {
+        width: 38%;
+      }
+    }
+    &--margin4 {
+      @include tablet {
+        width: 50%;
+      }
+    }
+  }
+
+  &__sub-list {
+    &--margin1 {
+      width: 50%;
+      @include tablet {
+        width: 40%;
+      }
+    }
+    &--margin2 {
+      width: 60%;
+      @include tablet {
+        width: 50%;
+      }
+    }
+    @include tablet {
+      display: flex;
+      flex-direction: row;
+    }
+  }
+
+  &__link {
+    color: $button-colour;
+    font-weight: 600;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__link-item {
+    display: flex;
+  }
+
+  &__buttons {
+    display: flex;
+    justify-content: space-between;
+    @include tablet {
+      align-items: center;
+      justify-content: flex-end;
+    }
+  }
+
+  &__button--delete {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    &::before {
+      content: url("../../../assets/Icons/delete_outline-24px.svg");
+    }
+  }
+
+  &__button--edit {
+    &::before {
+      content: url("../../../assets/Icons/edit-24px.svg");
+    }
+    @include tablet {
+      margin-left: 1.5rem;
+    }
+  }
+}
+
+.InventoryFilter {
+  display: none;
+  @include tablet {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 0.5rem 1rem;
+    background-color: $light-grey;
+    color: $slate;
+    text-transform: uppercase;
+  }
+  &__content-list {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    gap: 4rem;
+    margin-bottom: 1rem;
+    width: 100%;
+    @include tablet {
+      margin-bottom: 0;
+      align-items: center;
+      width: 85%;
+      justify-content: flex-start;
+    }
+  }
+
+  &__text {
+    display: flex;
+    align-items: center;
+  }
+  &__icon {
+    width: 15%;
+    &--width1 {
+      width: 26%;
+    }
+    &--width2 {
+      width: 18%;
+    }
+    &--width3 {
+      width: 18%;
+    }
+  }
+  &__list-title {
+    text-transform: uppercase;
+    color: $header-colour;
+    @include tablet {
+      display: none;
+    }
+  }
+
+  &__list-details {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    &--margin1 {
+      @include tablet {
+        width: 65%;
+      }
+    }
+    &--margin2 {
+      @include tablet {
+        width: 25%;
+      }
+    }
+    &--margin3 {
+      @include tablet {
+        width: 60%;
+        margin-left: 0.5rem;
+      }
+    }
+    &--margin4 {
+      @include tablet {
+        width: 38%;
+      }
+    }
+    &--margin4 {
+      @include tablet {
+        width: 50%;
+      }
+    }
+    @include tablet {
+      // width: 10rem;
+    }
+  }
+
+  &__sub-list {
+    // margin-right: 2rem;
+    &--margin1 {
+      width: 50%;
+      @include tablet {
+        width: 39.5%;
+      }
+    }
+    &--margin2 {
+      width: 60%;
+      @include tablet {
+        width: 50%;
+      }
+    }
+    @include tablet {
+      display: flex;
+      flex-direction: row;
+      // width: 100%;
+    }
+  }
+
+  &__text {
+    font-size: 12px;
+    font-weight: 600;
+    margin-right: 0.25rem;
+    &--margin {
+      @include tablet {
+        margin-right: 0;
+        margin-left: 0.75rem;
+      }
+    }
+  }
+
+  &__text-item {
+    display: flex;
+  }
+
+  &__buttons {
+    display: flex;
+    justify-content: space-between;
+    @include tablet {
+      align-items: center;
+      justify-content: flex-end;
+    }
+  }
+
+  &__button {
+    background-color: transparent;
+
+    border: none;
+    line-height: 100%;
+    cursor: pointer;
+    &::before {
+      content: url("../../../assets/Icons/sort-24px.svg");
+    }
+  }
+
+
+}
+
+.inStock {
+  color: $in-stock-colour;
+  background-color: rgba(21, 132, 99, 0.07);
+  border-radius: 20px;
+  padding: 0.25rem 0.5rem;
+  text-align: center;
+  font-weight: 400;
+  text-transform: uppercase;
+  font-size:0.75rem;
+  @include tablet {
+    width: 65%;
+  }
+  @include desktop {
+    max-width: 41%;
+  }
+
+  &--big {
+    width: 50%;
+
+    @include tablet {
+      width: 60%;
+    }
+  }
+}
+
+.outOfStock {
+  color: $error-outline-colour;
+  background-color: rgba(201, 69, 21, 0.07);
+  border-radius: 20px;
+  padding: 0.25rem 0.5rem;
+  text-align: center;
+  font-weight: 400;
+  font-size:0.75rem;
+  text-transform: uppercase;
+  @include tablet {
+    width: 85%;
+  }
+  @include desktop {
+    max-width: 55%;
+  }
+  &--big {
+    width: 70%;
+
+    @include tablet {
+      width: 90%;
+    }
+  }
+}
+
+.space {
+  color:#f7f8f9
+}

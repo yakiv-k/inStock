@@ -1,0 +1,23 @@
+$font-stack: "Titillium Web", sans-serif;
+
+body {
+  font-family: $font-stack;
+}
+
+@font-face {
+  font-family: $font-stack;
+  src: url("../../assets/fonts/TitilliumWeb-SemiBold.ttf") format("truetype"),
+    url("../../assets/fonts/TitilliumWeb-SemiBold.woff") format("woff"),
+    url("../../assets/fonts/TitilliumWeb-SemiBold.woff2") format("woff2");
+  font-weight: 600;
+  font-style: semi-bold;
+}
+
+@font-face {
+  font-family: $font-stack;
+  src: url("../../assets/fonts/TitilliumWeb-Regular.ttf") format("truetype"),
+    url("../../assets/fonts/TitilliumWeb-Regular.woff") format("woff"),
+    url("../../assets/fonts/TitilliumWeb-Regular.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}

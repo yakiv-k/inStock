@@ -1,0 +1,117 @@
+@use "../../styles/global.scss" as *;
+@use "../../styles/partials/breakpoints" as *;
+@use "../../styles/partials/colours" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/typography" as *;
+
+.nav {
+  width: 100%;
+  background-color: #232940;
+  padding: 2rem 1rem 5rem 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  @include tablet {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 2rem 2rem 5.5rem 2rem;
+  }
+  @include desktop {
+    padding: 2rem 7rem 7rem 7rem;
+  }
+  &__logo-div {
+    margin-bottom: 1.5rem;
+    text-align: center;
+    width: 100%;
+    @include tablet {
+      margin-bottom: 0;
+      width: auto;
+    }
+  }
+  &__logo {
+    text-align: center;
+  }
+  &__directory {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    @include tablet {
+      width: 20%;
+      justify-content: flex-end;
+    }
+  }
+  &__links {
+    text-decoration: none;
+    width: 100%;
+    text-align: center;
+    color: $cloud;
+    font-size: 11px;
+    line-height: 20px;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+
+    &--active {
+      background-color: $instock-black;
+      color: $white;
+      border-radius: 1rem;
+      &:hover {
+        color: $light-grey;
+      }
+
+      @include tablet {
+        justify-content: center;
+        padding: 0.5rem 1rem 0.5rem 1rem;
+      }
+    }
+    &--tablet {
+      @include tablet {
+        padding: 0.5rem 0 0.5rem 0.7125rem;
+        justify-content: flex-end;
+      }
+      @include desktop {
+        padding: 0.5rem 1rem;
+      }
+    }
+    @include tablet {
+      font-size: 13px;
+      line-height: 22px;
+      margin-left: 1rem;
+    }
+  }
+}
+
+.button__inventory {
+  background-color: transparent;
+  border: none;
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.button__warehouse {
+  background-color: transparent;
+  border: none;
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.button__inventory--active {
+  background-color: $instock-black;
+}
+
+.button__warehouse--active {
+  background-color: $instock-black;
+}
+
+.button__inventory,
+.button__warehouse {
+  &:hover:not(.button__inventory--active, .button__warehouse--active) {
+    color: $light-grey;
+    text-decoration: underline;
+  }
+}

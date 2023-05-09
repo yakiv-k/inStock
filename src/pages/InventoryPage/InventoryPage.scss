@@ -1,0 +1,22 @@
+@use "../../styles/partials/breakpoints" as *;
+@use "../../styles/partials/colours" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/typography" as *;
+
+.InventoryList {
+  &__body {
+    box-shadow: 0px 2px 5px 0px $box-shadow;
+    display: flex;
+    flex-direction: column;
+    transform: translateY(-4.5rem);
+    margin: 1rem;
+    // box-shadow: 0px 3px 8px rgb(100,100,100);
+    @include tablet {
+      transform: translateY(-6rem);
+      margin: 1.5rem 2rem;
+    }
+    @include desktop {
+      margin: 1rem 7rem;
+    }
+  }
+}
